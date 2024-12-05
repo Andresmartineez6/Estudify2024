@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+body.modo-oscuro {
+    color: #fff;
+    background-color: #121212;
+}
+
+body.modo-claro {
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+
+.btn-outline-light {
+    color: #fff;
+    border-color: #fff;
+    font-weight: 600;
+}
+
+body.modo-claro .btn-outline-light {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+body.modo-claro .btn-outline-light:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    color: #fff;
+}
+
+#iconoSol, #iconoLuna {
+    font-size: 1.2rem;
+}
+
+#iconoSol {
+    color: #f1c40f;
+    display: none;
+}
+
+#iconoLuna {
+    color: #4CAF50;
+}
+
+body.modo-claro #iconoSol {
+    display: inline-block;
+}
+
+body.modo-claro #iconoLuna {
+    display: none;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 26px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+.introduccion h2 {
+    color: #333;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.introduccion p {
+    color: #666;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+body.modo-oscuro .introduccion h2 {
+    color: #ccc;
+}
+
+body.modo-oscuro .introduccion p {
+    color: #b0b0b0;
+}
+
+.caracteristicas h2 {
+    color: #333;
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+body.modo-oscuro .caracteristicas h2 {
+    color: #fff;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 250px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+body.modo-claro .feature-card {
+    background-color: #f9f9f9;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card i.fa-calendar-alt {
+    color: #ff6347;
+}
+
+.feature-card i.fa-calendar-check {
+    color: #4682b4;
+}
+
+.feature-card i.fa-chart-line {
+    color: #32cd32;
+}
+
+.feature-card i.fa-lightbulb {
+    color: #ffd700;
+}
+
+.feature-card h3 {
+    color: #fff;
+    font-weight: 600;
+}
+
+body.modo-claro .feature-card h3 {
+    color: #fff;
+}
+
+.feature-card p {
+    color: #ccc;
+    font-weight: 500;
+}
+
+body.modo-claro .feature-card p {
+    color: #888;
+}
+
+footer {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+body.modo-claro footer {
+    color: #333;
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+body.modo-claro footer a {
+    color: #333;
+}
+
+footer a:hover {
+    color: #aaa;
+}
+
+body.modo-claro footer a:hover {
+    color: #555;
+}
+
+.caracteristicas h2 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+body.modo-claro .caracteristicas h2 {
+    color: #333;
+}
+
+
+/* Sección de Perfiles */
+.titulo-seccion {
+    color: #333;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+body.modo-oscuro .titulo-seccion {
+    color: #fff;
+}
+
+.descripcion-seccion {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+body.modo-oscuro .descripcion-seccion {
+    color: #b0b0b0;
+}
+
+/* Contenedor de perfiles */
+.perfil-contenedor {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+/* Gráficos circulares animados */
+.grafico-circular {
+    width: 120px;
+    height: 120px;
+    background: conic-gradient(#4CAF50 calc(var(--porcentaje) * 1%), #ccc 0%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4CAF50;
+    font-size: 1.8rem;
+    font-weight: bold;
+    position: relative;
+    animation: llenar 2s ease-out forwards;
+}
+body.modo-claro .grafico-circular {
+    color: #333;
+}
+
+.perfil-titulo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #333;
+}
+body.modo-oscuro .perfil-titulo {
+    color: #fff;
+}
+
+.perfil-descripcion {
+    color: #666;
+    font-size: 0.95rem;
+}
+body.modo-oscuro .perfil-descripcion {
+    color: #aaa;
+}
+
+/* Animación de llenado del gráfico */
+@keyframes llenar {
+    0% {
+        --porcentaje: 0;
+    }
+    100% {
+        --porcentaje: var(--fin);
+    }
+}
+
+
+
+
+
+
+.seccion-rendimiento {
+    text-align: center;
+    padding: 2em 0;
+}
+
+.seccion-rendimiento h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.seccion-rendimiento p {
+    color: #bbb;
+    font-size: 1.1em;
+    margin-bottom: 2em;
+}
+
+.grafico-barras {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 300px;
+    margin-top: 30px;
+}
+
+.barra {
+    position: relative;
+    width: 20%;
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.barra:hover {
+    transform: scale(1.05);
+}
+
+.nivel {
+    background-color: #ff8c00; 
+    width: 100%;
+    height: 0;
+    border-radius: 8px 8px 0 0;
+    animation: animarAltura 1.5s ease-in-out forwards;
+    --altura: 100%;
+}
+
+@keyframes animarAltura {
+    from {
+        height: 0;
+    }
+    to {
+        height: var(--altura);
+    }
+}
+
+.etiqueta {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.descripcion-barra {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #ccc;
+    text-align: center;
+    font-weight: 500;
+}
+
+.grafico-container {
+    max-width: 500px; 
+    margin: 0 auto; 
+    padding: 20px;
+}
+
+#graficoRendimiento {
+    width: 100% !important; 
+    height: auto !important; 
+}
+
+
+
+
+
+
+
+
+.seccion-beneficios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .beneficio-circulo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    transition: transform 0.3s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .contenido-circulo {
+    padding: 10px;
+  }
+  
+  .contenido-circulo h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .contenido-circulo p {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+  
+  /* Colores específicos para cada círculo */
+  .organizacion {
+    background-color: #ff6347;
+    box-shadow: 0 0 15px #ff6347, 0 0 30px #ff6347;
+  }
+  
+  .productividad {
+    background-color: #4682b4;
+    box-shadow: 0 0 15px #4682b4, 0 0 30px #4682b4;
+  }
+  
+  .compromiso {
+    background-color: #32cd32;
+    box-shadow: 0 0 15px #32cd32, 0 0 30px #32cd32;
+  }
+  
+  .tiempo {
+    background-color: #ffd700;
+    box-shadow: 0 0 15px #ffd700, 0 0 30px #ffd700;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .beneficio-circulo {
+      width: 120px;
+      height: 120px;
+    }
+    .contenido-circulo h3 {
+      font-size: 0.9rem;
+    }
+    .contenido-circulo p {
+      font-size: 0.7rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .beneficio-circulo {
+      width: 100px;
+      height: 100px;
+    }
+    .contenido-circulo h3 {
+      font-size: 0.8rem;
+    }
+    .contenido-circulo p {
+      font-size: 0.6rem;
+    }
+  }

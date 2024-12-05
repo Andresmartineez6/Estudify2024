@@ -1,0 +1,22 @@
+{
+    "name": "andres/estudify",
+    "description": "Aplicación web para la gestión académica y de estudio, con funcionalidades de calendario, finanzas, motivación y seguimiento de programas académicos.",
+    "type": "project",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "Andres\\Estudify\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "andres",
+            "email": "andres.martinez@impulsatelecom.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "firebase/php-jwt": "^6.10",
+        "google/apiclient": "^2.18"
+    }
+}

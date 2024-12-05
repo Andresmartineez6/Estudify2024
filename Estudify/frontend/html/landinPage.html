@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudify - La mejor herramienta para estudiantes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../css/landingPage.css">
+</head>
+
+
+<body class="modo-oscuro">
+
+
+
+  <header class="navbar navbar-expand-lg navbar-dark bg-dark py-3 shadow-sm">
+    <div class="container">
+
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <img src="../assets/logos/logoEstudify.png" alt="Logo de Estudify" class="me-2" style="width: 100px;">
+        <span class="fs-3 fw-bold">Estudify</span>
+      </a>
+
+      <div class="ms-auto d-flex align-items-center">
+        <a href="inicioSesion.html" class="btn btn-outline-light me-3 px-4 py-2">Iniciar Sesión</a>
+        <div class="ms-auto d-flex align-items-center">
+            <span id="iconoSol" class="me-2" style="display: none;"><i class="fas fa-sun"></i></span>
+            <label class="switch">
+              <input type="checkbox" id="toggleMode">
+              <span class="slider round"></span>
+            </label>
+            <span id="iconoLuna" class="ms-2"><i class="fas fa-moon"></i></span>
+          </div>          
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <section class="introduccion text-center py-5">
+    <div class="container">
+      <h2 class=" mb-3">Bienvenido a Estudify</h2>
+      <p class="lead text-secondary">La mejor herramienta para mejorar tu eficiencia como estudiante. Organiza tus estudios, gestiona tu tiempo y sigue tu progreso para alcanzar tus objetivos académicos.</p>
+    </div>
+  </section>
+
+
+
+  <section class="caracteristicas py-5">
+    <div class="container text-center">
+      <h2 class="mb-4">Características de Estudify</h2>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card p-3 mb-4 shadow-sm bg-dark text-light feature-card">
+            <i class="fas fa-calendar-alt fa-3x mb-3"></i>
+            <h3 class="card-title">Planificador de Estudios</h3>
+            <p class="card-text">Organiza tus horarios de estudio y aprovecha cada minuto de manera efectiva.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card p-3 mb-4 shadow-sm bg-dark text-light feature-card">
+            <i class="fas fa-calendar-check fa-3x mb-3"></i>
+            <h3 class="card-title">Calendario Académico</h3>
+            <p class="card-text">Mantén el control de tus tareas y exámenes con un calendario personalizado.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card p-3 mb-4 shadow-sm bg-dark text-light feature-card">
+            <i class="fas fa-chart-line fa-3x mb-3"></i>
+            <h3 class="card-title">Seguimiento de Progreso</h3>
+            <p class="card-text">Visualiza tus logros y mejora continuamente con estadísticas detalladas.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card p-3 mb-4 shadow-sm bg-dark text-light feature-card">
+            <i class="fas fa-lightbulb fa-3x mb-3"></i>
+            <h3 class="card-title">Frases Motivadoras</h3>
+            <p class="card-text">Recibe frases motivadoras diariamente para mantenerte enfocado y positivo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="seccion-rendimiento text-center py-5">
+    <h2>Impacto de Estudify en el Rendimiento</h2>
+    <p>Los estudiantes que utilizan Estudify han experimentado mejoras significativas en diversas áreas de sus estudios.</p>
+    <div class="grafico-container">
+      <canvas id="graficoRendimiento"></canvas>
+    </div>
+  </section>
+
+
+
+
+  
+  <section class="seccion-beneficios">
+    <div class="beneficio-circulo organizacion">
+      <div class="contenido-circulo">
+        <h3>Organización Eficiente</h3>
+        <p>Planifica y gestiona tus horarios de estudio de manera efectiva.</p>
+      </div>
+    </div>
+    <div class="beneficio-circulo productividad">
+      <div class="contenido-circulo">
+        <h3>Incremento en la Productividad</h3>
+        <p>Utiliza el calendario académico para visualizar tus fechas importantes.</p>
+      </div>
+    </div>
+    <div class="beneficio-circulo compromiso">
+      <div class="contenido-circulo">
+        <h3>Mayor Compromiso</h3>
+        <p>El seguimiento de progreso te motiva a mejorar constantemente.</p>
+      </div>
+    </div>
+    <div class="beneficio-circulo tiempo">
+      <div class="contenido-circulo">
+        <h3>Gestión del Tiempo</h3>
+        <p>Las frases motivadoras optimizan tu enfoque en el aprendizaje.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  
+
+  <footer class="text-center py-4 bg-dark text-light">
+    <p>© 2024 Estudify - Todos los derechos reservados</p>
+    <p><a href="#" class="text-light">Contacto</a> | <a href="#" class="text-light">Términos de servicio</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="../js/landindPage/landinPage.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</body>
+</html>
