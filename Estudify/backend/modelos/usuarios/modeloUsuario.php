@@ -155,6 +155,45 @@ class usuario{
     }
 
 
+    public function obtenerTodosLosUsuarios(): array{
+
+    $sentencia = "SELECT * FROM usuarios";
+    $consulta = $this->db->prepare($sentencia);
+    $consulta->execute();
+    $resultado = $consulta->get_result();
+    $usuarios = [];
+
+    while ($fila = $resultado->fetch_assoc()) {
+        $usuarios[] = $fila;
+    }
+
+    $consulta->close();
+    return $usuarios;
+}
+
+    public function modificarUsuario($id_usuario, $nombre, $email): void{
+
+        $sentencia="UPDATE usuarios SET nombre = ?, email = ? WHERE id_usuario = ?";
+
+        $consulta = $this->db->prepare($sentencia);
+        $consulta->bind_param("ssi", $nombre, $email, $id_usuario);
+        $consulta->execute();
+        $consulta->close();
+    }
+
+
+    public function eliminarUsuario($id_usuario): void{
+
+        $sentencia = "DELETE FROM usuarios WHERE id_usuario = ?";
+        
+        $consulta = $this->db->prepare($sentencia);
+        $consulta->bind_param("i", $id_usuario);
+        $consulta->execute();
+        $consulta->close();
+
+    }
+
+
 }
 
 ?>

@@ -2,7 +2,10 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    overflow-x: hidden; /* Asegura que no haya scroll horizontal */
 }
+
 
 body.modo-oscuro {
     color: #fff;
@@ -405,89 +408,260 @@ body.modo-oscuro .perfil-descripcion {
 
 
 
+
+
+
+
 .seccion-beneficios {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  .beneficio-circulo {
-    width: 160px;
-    height: 160px;
+    gap: 20px; /* Reduce el espacio entre círculos */
+    padding: 40px 20px;
+    margin: 0 auto;
+}
+
+
+.beneficio-circulo {
+    width: 250px; /* Aumentamos el tamaño */
+    height: 250px; /* Aumentamos el tamaño */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
-    position: absolute;
-    transition: transform 0.3s;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  }
-  
-  .contenido-circulo {
-    padding: 10px;
-  }
-  
-  .contenido-circulo h3 {
-    font-size: 1rem;
+}
+
+.beneficio-circulo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+.contenido-circulo h3 {
+    font-size: 1.2rem; /* Ajustamos el tamaño del título */
     font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .contenido-circulo p {
-    font-size: 0.75rem;
-    line-height: 1.2;
-  }
-  
-  /* Colores específicos para cada círculo */
-  .organizacion {
+    margin-bottom: 10px;
+}
+
+.contenido-circulo p {
+    font-size: 0.9rem; /* Ajustamos el tamaño del texto */
+    line-height: 1.4;
+}
+
+
+
+/* Colores para cada círculo */
+.organizacion {
     background-color: #ff6347;
-    box-shadow: 0 0 15px #ff6347, 0 0 30px #ff6347;
-  }
-  
-  .productividad {
+    box-shadow: 0 4px 15px rgba(255, 99, 71, 0.4);
+}
+
+.productividad {
     background-color: #4682b4;
-    box-shadow: 0 0 15px #4682b4, 0 0 30px #4682b4;
-  }
-  
-  .compromiso {
+    box-shadow: 0 4px 15px rgba(70, 130, 180, 0.4);
+}
+
+.compromiso {
     background-color: #32cd32;
-    box-shadow: 0 0 15px #32cd32, 0 0 30px #32cd32;
-  }
-  
-  .tiempo {
+    box-shadow: 0 4px 15px rgba(50, 205, 50, 0.4);
+}
+
+.tiempo {
     background-color: #ffd700;
-    box-shadow: 0 0 15px #ffd700, 0 0 30px #ffd700;
-  }
-  
-  /* Responsividad */
-  @media (max-width: 768px) {
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+@media (max-width: 768px) {
     .beneficio-circulo {
-      width: 120px;
-      height: 120px;
+        width: 150px; /* Tamaño reducido para pantallas medianas */
+        height: 150px;
     }
     .contenido-circulo h3 {
-      font-size: 0.9rem;
+        font-size: 1rem;
     }
     .contenido-circulo p {
-      font-size: 0.7rem;
+        font-size: 0.8rem;
     }
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .beneficio-circulo {
-      width: 100px;
-      height: 100px;
+        width: 120px; /* Tamaño más reducido para pantallas pequeñas */
+        height: 120px;
     }
     .contenido-circulo h3 {
-      font-size: 0.8rem;
+        font-size: 0.9rem;
     }
     .contenido-circulo p {
-      font-size: 0.6rem;
+        font-size: 0.7rem;
     }
-  }
+}
+
+
+body.modo-claro .introduccion p {
+    color: #666; /* Cambiar a un tono más oscuro */
+}
+
+body.modo-claro footer, body.modo-claro .caracteristicas h2, body.modo-claro .feature-card p {
+    color: #444; /* Ajustar un poco más oscuro */
+}
+
+
+.testimonios {
+    background-color: #121212;
+    color: #fff;
+    padding: 50px 20px;
+    overflow: hidden;
+}
+
+.titulo-seccion {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffd700;
+    text-transform: uppercase;
+}
+
+.descripcion-seccion {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.testimonio-card {
+    background: linear-gradient(145deg, #1c1c1c, #252525);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 350px; /* Altura mínima fija para todas las tarjetas */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Asegura el espaciado entre elementos */
+}
+
+.testimonio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ffd700;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonio-texto {
+    font-size: 1rem;
+    font-style: italic;
+    color: #ddd;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
+}
+
+.testimonio-nombre {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.testimonio-cargo {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    .testimonio-card {
+        min-height: 300px; /* Ajusta para pantallas más pequeñas */
+    }
+    .titulo-seccion {
+        font-size: 2rem;
+    }
+    .descripcion-seccion {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+.frases-motivadoras {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #fff;
+    border-radius: 8px;
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+}
+
+.frases-motivadoras h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #ffd700; /* Amarillo para destacar */
+    text-transform: uppercase;
+}
+
+.frases-motivadoras p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ccc;
+    font-style: italic; /* Agregar un poco de estilo */
+    min-height: 50px; /* Asegura consistencia incluso al cargar */
+}
+
+.frases-motivadoras button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.frases-motivadoras button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Animación de hover */
+}
+
+

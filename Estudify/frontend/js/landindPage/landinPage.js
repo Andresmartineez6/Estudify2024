@@ -112,26 +112,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const circles = document.querySelectorAll(".beneficio-circulo");
-  
-    circles.forEach(circle => {
-      animateCircle(circle);
+document.querySelectorAll('.beneficio-circulo').forEach(circulo => {
+    circulo.addEventListener('mouseover', () => {
+        circulo.style.transform = 'scale(1.2)';
     });
-  
-    function animateCircle(element) {
-      const section = document.querySelector(".seccion-beneficios");
-      
-      anime({
-        targets: element,
-        translateX: () => anime.random(-section.clientWidth / 2 + 100, section.clientWidth / 2 - 100),
-        translateY: () => anime.random(-section.clientHeight / 2 + 100, section.clientHeight / 2 - 100),
-        easing: 'easeInOutQuad',
-        duration: anime.random(2000, 4000),
-        complete: function() {
-          animateCircle(element); 
+    circulo.addEventListener('mouseout', () => {
+        circulo.style.transform = 'scale(1)';
+    });
+});
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const chistesTraducidos = new Map([
+        ["Why couldn't the kid see the pirate movie?", "¿Por qué el niño no pudo ver la película de piratas?"],
+        ["Because it was rated arrr!", "¡Porque era clasificación arrr!"],
+        // Puedes añadir manualmente más traducciones si lo prefieres.
+    ]);
+
+    const citaElement = document.getElementById("cita");
+    const nuevaCitaBtn = document.getElementById("nuevaCita");
+
+    const obtenerChiste = async () => {
+        try {
+            const response = await fetch("https://official-joke-api.appspot.com/random_joke");
+            if (!response.ok) throw new Error("Error al obtener el chiste");
+
+            const data = await response.json();
+            const setupTraducido = chistesTraducidos.get(data.setup) || data.setup;
+            const punchlineTraducido = chistesTraducidos.get(data.punchline) || data.punchline;
+
+            citaElement.innerHTML = `<strong>${setupTraducido}</strong> - ${punchlineTraducido}`;
+        } catch (error) {
+            console.error("Error al obtener el chiste:", error);
+            citaElement.textContent = "No se pudo cargar el chiste. Intenta nuevamente.";
         }
-      });
-    }
-  });
-  
+    };
+
+    nuevaCitaBtn.addEventListener("click", obtenerChiste);
+    obtenerChiste(); // Mostrar un chiste al cargar la página
+});
